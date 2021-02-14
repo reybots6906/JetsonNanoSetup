@@ -126,7 +126,7 @@ sudo sh -c 'echo 255 > sys/devices/pwm-fan/target_pwm'
 
 ![](resources/pasted.png)
 
-Once pasted, simply press the escape key `esc` on your keyboard, then colon (`:`) an the letters `wq`. This signals the terminal to `w`rite and `q`uit (it's complicated, I know:( ). 
+Once pasted, simply press the escape key `esc` on your keyboard, then colon (`:`) an the letters `wq`. This signals the terminal to `w`rite and `q`uit (it's complicated, I know ). 
 
 So:
 - press `esc`, and the 'INSERT'word should disappear from the bottom left of your Terminal (this is good, it means you're out of insert mode):
