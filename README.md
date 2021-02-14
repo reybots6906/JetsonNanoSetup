@@ -46,7 +46,7 @@ Lastly, copy and paste the following command.  It simply runs a "shell script" f
 sudo ./installVSCodeWithPython.sh
 ```
 
-![](resources/runShell.sh)
+![](resources/runShell.png)
 
 Once the Terminal screen stops outputting information, search for 'VSCode' in your computer:
  
