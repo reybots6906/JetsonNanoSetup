@@ -41,7 +41,10 @@ You will not see any output on the terminal, but the location on your Terminal w
 
 ![](resources/cd.png)
 
-Lastly, copy and paste the following command.  It simply runs a "shell script" file called 'installVSCodeWithPython.sh' that handles the installation of VSCode and Python for us.  (NOTE: When promted, enter your Jetson Nano's password.  You're asked for it because system files that require admin access will be updated):
+Lastly, copy and paste the following command.  It simply runs a "shell script" file called 'installVSCodeWithPython.sh' that handles the installation of VSCode and Python for us.  (NOTE: When promted, enter your Jetson Nano's password.  You're asked for it because system files that require admin access will be updated). This command may take up to three minutes to finish executing:
+```bash
+sudo ./installVSCodeWithPython.sh
+```
 
 ![](resources/runShell.sh)
 
