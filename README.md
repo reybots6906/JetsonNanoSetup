@@ -65,3 +65,28 @@ Your terminal screen should output information on the version of python:
 ![](resources/pythonVersion.png)
 
 That's it! You've downloaded VSCode and Python onto your Jetson Nano.
+
+
+# Installing Java
+
+1). Open a Terminal window and run the following command to download Java. When prompted, enter your password.  You will also be asked if you would like to accept the installation location of the software -- press 'Y' and "ENTER" to continue:
+```bash
+sudo apt install default-jdk
+```
+
+Your output will look as follows:
+
+![](resources/javaOutput.png)
+
+
+2). Java should now be installed.  To verify, run the following command to show details about the version of Java that was installed:
+```bash
+java -version
+```
+
+The output should look similar to the following (simply showing details about the installation):
+
+![](resources/javaVersion.png)
+
+
+That's it -- you installed Java on your Jetson Nano!
