@@ -1,4 +1,4 @@
-# Installing VSCode, Python and Java on a Jetson Nano
+# Installing VSCode, Python and Java on a Jetson Nano and Configuring the Fan
 
 ## Installing VSCode and Python
 
@@ -93,3 +93,63 @@ The output should look similar to the following (simply showing details about th
 
 
 That's it -- you installed Java on your Jetson Nano!
+
+# Configuring the Fan on the Jetson Nano
+1). Open a Terminal window and run the following commands in order:
+
+First (this command will prompt you for your password. Provide it when prompted):
+```bash
+sudo sh -c 'echo 255 > /sys/devices/pwm-fan/target_pwm'
+```
+
+![](resources/first.png)
+
+Second: This will open up a new file on the Terminal.
+```bash
+sudo vi /etc/rc.local
+```
+![](resources/second.png)
+
+
+Third: hit the letter `i` on your keyboard (this is needed to tell your Terminal that you are about to`i`nsert data into thie file you just opened. You will see the word "insert" on the bottom left corner of your Terminal to indicate that it is, in fact, in "insert" mode:
+
+![](resources/insertMode.png)
+
+
+Then, copy and paste the following into the terminal:
+```bash
+#!/bin/bash
+sleep 10
+sudo /usr/bin/jetson_clocks
+sudo sh -c 'echo 255 > sys/devices/pwm-fan/target_pwm'
+```
+
+![](resources/pasted.png)
+
+Once pasted, simply press the escape key `esc` on your keyboard, then colon (`:`) an the letters `wq`. This signals the terminal to `w`rite and `q`uit (it's complicated, I know:( ). 
+
+So:
+- press `esc`, and the 'INSERT'word should disappear from the bottom left of your Terminal (this is good, it means you're out of insert mode):
+
+![](outOfInsert.png)
+
+- Now,type the colon key followed by lower-case `w` and lower-case `q` with no spaces in betweeen any of the three characters, like this:  `:wq`
+
+- press the enter key, and the file should now close.
+
+![](wq.png)
+
+2). Now the file should be closed, and you'll be able to run commands again on your Terminal screen. Copy and paste the following commmand:
+```bash
+sudo chmod u+x /etc/rc.local
+```
+
+![](sudo.png)
+
+3).  Finally, reboot the Jetson Nano with the following command (You can skip this step. It's just suggested to refresh the system files since we just updated one -- making the changes take effect  when restarting. The changes will take effect after the Nano is rebooted.):
+```bash
+sudo reboot
+```
+
+All done.
+
